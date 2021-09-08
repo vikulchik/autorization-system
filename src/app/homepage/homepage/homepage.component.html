@@ -1,0 +1,11 @@
+<p>homepage works!</p>
+
+<div *ngIf="user">
+  <h1>{{user.email}}</h1>
+  <h2>{{user.phone}}</h2>
+
+  <button  mat-button mat-raised-button color="danger" type="button" (click)="logout()">Logout</button>
+</div>
+
+
+
