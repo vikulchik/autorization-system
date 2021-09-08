@@ -1,0 +1,17 @@
+<section class="auth-buttons">
+  <a [routerLink]="['/auth/login']" mat-button color="primary">
+    Login
+  </a>
+  <a [routerLink]="['/auth/register']" mat-button  color="primary">
+    Register
+  </a>
+  <a [routerLink]="['/homepage']" mat-button  color="primary">
+    Homepage
+  </a>
+</section>
+
+<div class="auth-container">
+  <router-outlet></router-outlet>
+</div>
+
+

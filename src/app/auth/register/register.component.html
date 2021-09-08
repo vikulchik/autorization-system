@@ -1,0 +1,30 @@
+<form action="" [formGroup]="form" (submit)="register($event)">
+  <mat-form-field appearance="fill" class="auth-field">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" email ngModel>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="auth-field">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="auth-field">
+    <mat-label>Confirm password</mat-label>
+    <input matInput type="password" formControlName="confirmPassword">
+  </mat-form-field>
+  <div *ngIf="form.controls['confirmPassword'].invalid && (form.controls['confirmPassword'].dirty || form.controls['confirmPassword'].touched)">
+    <div *ngIf="form.controls['confirmPassword'].errors?.notSame" class="mat-typography" [ngStyle]="{color: 'red'}">
+      Password and confirm password not the same !!!
+    </div>
+  </div>
+
+  <mat-form-field appearance="fill" class="auth-field">
+    <mat-label>Phone</mat-label>
+    <input matInput type="number" formControlName="phone">
+  </mat-form-field>
+
+  <section>
+    <button [disabled]="!form.valid" mat-button mat-raised-button color="primary" type="submit">Register</button>
+  </section>
+</form>

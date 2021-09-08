@@ -1,0 +1,15 @@
+<form [formGroup]="form" action="" (submit)="login($event)">
+  <mat-form-field appearance="fill" class="auth-field">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="auth-field">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" type="password">
+  </mat-form-field>
+
+  <section>
+    <button [disabled]="!form.valid" mat-button mat-raised-button color="primary">Login</button>
+  </section>
+</form>
